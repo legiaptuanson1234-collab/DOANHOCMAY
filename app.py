@@ -15,22 +15,23 @@ st.markdown("<h4 style='text-align: center; color: gray;'>Module: Quản lý bã
 st.markdown("---")
 
 # ==========================================
-# NẠP MÔ HÌNH VÀ DỮ LIỆU ĐÃ LƯU TỪ Ổ D
+# NẠP MÔ HÌNH VÀ DỮ LIỆU ĐÃ ĐƯỢC CHUYỂN SANG ĐƯỜNG DẪN TƯƠNG ĐỐI
 # ==========================================
 @st.cache_resource
 def load_assets():
-    model = joblib.load(r'D:\TGMT\DOANHOCMAY\lgbm_pymoo_TH1.pkl')
-    scaler_X = joblib.load(r'D:\TGMT\DOANHOCMAY\scaler_X.pkl')
-    scaler_y = joblib.load(r'D:\TGMT\DOANHOCMAY\scaler_y.pkl')
-    features = joblib.load(r'D:\TGMT\DOANHOCMAY\feature_cols.pkl')
-    targets = joblib.load(r'D:\TGMT\DOANHOCMAY\target_cols.pkl')
-    df_demo = pd.read_csv(r'D:\TGMT\DOANHOCMAY\demo_data.csv')
+    # Gọi trực tiếp tên file để chạy được cả trên máy cá nhân lẫn Streamlit Cloud
+    model = joblib.load('lgbm_pymoo_TH1.pkl')
+    scaler_X = joblib.load('scaler_X.pkl')
+    scaler_y = joblib.load('scaler_y.pkl')
+    features = joblib.load('feature_cols.pkl')
+    targets = joblib.load('target_cols.pkl')
+    df_demo = pd.read_csv('demo_data.csv')
     return model, scaler_X, scaler_y, features, targets, df_demo
 
 try:
     model, scaler_X, scaler_y, feature_cols, target_cols, df_demo = load_assets()
 except Exception as e:
-    st.error("⚠️ Không tìm thấy file dữ liệu tại D:\\TGMT\\DOANHOCMAY\\. Vui lòng kiểm tra lại!")
+    st.error("⚠️ Không tìm thấy file dữ liệu hoặc mô hình (.pkl, .csv) trong thư mục hiện tại. Vui lòng kiểm tra lại!")
     st.stop()
 
 # ==========================================
