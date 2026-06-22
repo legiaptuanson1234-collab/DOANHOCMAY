@@ -25,7 +25,7 @@ def load_assets():
     scaler_y = joblib.load('scaler_y.pkl')
     features = joblib.load('feature_cols.pkl')
     targets = joblib.load('target_cols.pkl')
-    df_demo = pd.read_csv('demo_data.csv')
+    df_demo = pd.read_csv('SV27_processed_final.csv')
     return model, scaler_X, scaler_y, features, targets, df_demo
 
 try:
@@ -46,7 +46,7 @@ if menu == "📊 Thống kê Dữ liệu & Điểm số":
     st.write("Bảng dữ liệu mô phỏng thu thập từ hệ thống cảm biến (10 dòng gần nhất):")
     
     # Tạo bản sao để làm đẹp tên cột hiển thị trên Web
-    df_display = df_demo.tail(10).copy()
+    df_display = df_demo.copy()
     df_display.columns = [col.replace('_available_spaces', '') for col in df_display.columns]
     
     # Ép bảng dãn hết chiều ngang giao diện
