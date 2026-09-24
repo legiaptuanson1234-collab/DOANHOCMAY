@@ -3,7 +3,6 @@ import pandas as pd
 import numpy as np
 import joblib
 import matplotlib.pyplot as plt
-import seaborn as sns
 
 # ==========================================
 # CẤU HÌNH GIAO DIỆN TRANG WEB
@@ -50,7 +49,7 @@ if menu == "📊 Thống kê Dữ liệu & Điểm số":
     df_display.columns = [col.replace('_available_spaces', '') for col in df_display.columns]
     
     # Ép bảng dãn hết chiều ngang giao diện
-    st.dataframe(df_display, use_container_width=True)
+    st.dataframe(df_display, width='stretch')
     
     st.header("2. Hiệu suất AI (Đã tối ưu bằng Thuật toán Di truyền)")
     
@@ -72,7 +71,7 @@ elif menu == "🔮 Cảnh báo Thời gian thực (Live)":
     current_time = sample_data['timestamp'].values[0] if 'timestamp' in sample_data.columns else f"Mốc thời gian #{row_idx}"
     st.info(f"🕒 **Đang quét tại thời điểm:** {current_time}")
     
-    if st.button("🚀 Kích Hoạt AI Dự Báo", use_container_width=True):
+    if st.button("🚀 Kích Hoạt AI Dự Báo", width='stretch'):
         with st.spinner('Siêu máy tính đang tính toán...'):
             # Đưa dữ liệu qua Scaler
             X_input = sample_data[feature_cols]

@@ -1,3 +1,4 @@
+﻿# Run dashboard (app.py)
 streamlit
 pandas
 numpy
@@ -6,3 +7,9 @@ matplotlib
 seaborn
 scikit-learn
 lightgbm
+
+# Notebook DAHM.ipynb: huan luyen, toi uu & giai thich mo hinh
+tensorflow
+xgboost
+shap
+pymoo

@@ -1,3 +1,11 @@
-.venv/
+﻿.venv/
 __pycache__/
 .vscode/
+
+# Output artifacts - khong commit vao repo
+*.tiff
+baseline_*.pkl
+xgb_pymoo_*.pkl
+lgbm_pymoo_TH2.pkl
+lgbm_pymoo_TH3.pkl
+model_comparison_results.csv
