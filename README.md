@@ -66,6 +66,5 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-Mở trình duyệt tại `http://localhost:8501` để sử dụng dashboard.
+Mở trình duyệt tại `https://du-bao-do-xe-sv27.streamlit.app/` để sử dụng dashboard.
 
-> **Ghi chú:** Các artifact trung gian (ảnh `.tiff` gốc, baseline models, model so sánh) được giữ ngoài repo qua `.gitignore` để repo gọn gàng; bạn có thể sinh lại bằng notebook `DAH.ipynb`.
